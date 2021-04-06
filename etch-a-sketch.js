@@ -15,21 +15,31 @@ const shakeButton = document.querySelector('.shake');
 // make variables called height and width from the same properties on canvas
 const { width, height } = canvas;
 
+// create random starting points on canvas
+let x = Math.floor(Math.random() * width);
+let y = Math.floor(Math.random() * height);
+
+
 context.lineJoin = 'round';
 context.lineCap = 'round';
 context.lineWidth = 10;
 
 // start draw
 context.beginPath();
-context.moveTo(200, 200);
-context.lineTo(200, 200);
+context.moveTo(x, y);
+context.lineTo(x, y);
 
 context.stroke();
 
 // draw function
 
 // key handler
+const handleKey = () => {
+  console.log("HANDLING DE KEY BRO")
+}
+
 
 // clear (shake) function
 
 // event listener for arrow keys
+window.addEventListener('keydown');

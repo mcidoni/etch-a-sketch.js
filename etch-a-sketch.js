@@ -12,9 +12,8 @@ const shakeButton = document.querySelector('.shake');
 // const { width } = canvas;
 // const { height } = canvas;
 
+// make variables called height and width from the same properties on canvas
 const { width, height } = canvas;
-
-console.log(width, height);
 
 context.lineJoin = 'round';
 context.lineCap = 'round';

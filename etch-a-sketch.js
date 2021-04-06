@@ -32,14 +32,28 @@ context.lineTo(x, y);
 context.stroke();
 
 // draw function
+const draw = ({ key }) => {
+  console.log(key);
+  context.beginPath();
+  context.moveTo(x, y);
+
+  x = x - 10;
+  y = y - 10;
+
+  context.lineTo(x, y);
+  context.stroke();
+}
 
 // key handler
-const handleKey = () => {
-  console.log("HANDLING DE KEY BRO")
-}
+const handleKey = (e) => {
+  if (e.key.includes('Arrow')) {
+    e.preventDefault();
+    draw({ key: e.key })
+  }
+};
 
 
 // clear (shake) function
 
 // event listener for arrow keys
-window.addEventListener('keydown');
+window.addEventListener('keydown', handleKey);

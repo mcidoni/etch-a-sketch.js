@@ -70,11 +70,13 @@ const handleKey = (e) => {
 // clear (shake) function
 const clearCanvas = () => {
   canvas.classList.add('shake');
+  context.clearRect(0, 0, width, height);
   canvas.addEventListener('animationend', function() {
-    console.log('shake got shook');
     canvas.classList.remove('shake');
+    // remove event listener once animation is done running
   }, { once: true });
 };
 
 // event listener for arrow keys
 window.addEventListener('keydown', handleKey);
+shakeButton.addEventListener('click', clearCanvas);
